@@ -36,10 +36,12 @@ def parse_args():
     parser.add_argument("--train_path", default="", type=str, help="")
     parser.add_argument("--max_len", type=int, default=1024, help="")
     parser.add_argument("--max_src_len", type=int, default=256, help="")
+    # action='store_true'表示：如果命令行中包含 --is_skip，则将 args.is_skip 的值设为 True。如果命令行中没有包含 --is_skip，则将 args.is_skip 的值设为 False。
     parser.add_argument("--is_skip", action='store_true', help="")
     # Train
     parser.add_argument("--per_device_train_batch_size", type=int, default=16, help="")
     parser.add_argument("--learning_rate", type=float, default=1e-3, help="")
+    # 使用 L2 正则化，正则化系数默认值为0.1
     parser.add_argument("--weight_decay", type=float, default=0.1, help="")
     parser.add_argument("--num_train_epochs", type=int, default=1, help="")
     parser.add_argument("--gradient_accumulation_steps", type=int, default=1, help="")
